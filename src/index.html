@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="style.css" />
@@ -12,62 +12,89 @@
           <h1>Buttersandwich</h1>
         </div>
         <div class="header-menu">
-          <div class="header-menu-item"><img src="#" />Search</div>
-          <div class="header-menu-item"><img src="#" />Account</div>
-          <div class="header-menu-item"><img src="#" />Notifications</div>
-          <div class="header-menu-item"><img src="#" />Theme</div>
-          <div class="header-menu-item"><img src="#" />Settings</div>
+          <button class="header-menu-item" popovertarget="searchbar">
+            <span class="icon icon-search"></span>
+          </button>
+          <div popover id="searchbar" class="searchbar-popover">
+            <input class="searchbar" type="text" />
+          </div>
+          <button popovertarget="user" class="header-menu-item">
+            <span class="icon icon-user"></span>
+          </button>
+          <div popover id="user" class="user-popover">
+            <h2>Login</h2>
+          </div>
+          <button popovertarget="notifications" class="header-menu-item">
+            <span class="icon icon-notifications"></span>
+          </button>
+          <div popover id="notifications" class="notifications-popover">
+            <h2>Notifications</h2>
+          </div>
+          <button class="header-menu-item">
+            <span class="icon icon-theme"></span>
+          </button>
+          <button popovertarget="settings" class="header-menu-item">
+            <span class="icon icon-settings"></span>
+          </button>
+          <div popover id="settings" class="settings-popover">
+            <h2>Settings</h2>
+          </div>
         </div>
       </header>
 
       <div class="sidebar">
-        <div class="sidebar-sectio-ntitle"><h3>Nav section</h3></div>
-        <div class="sidebar-item">
-          <p>Nav item</p>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title"><h3>Dewgong</h3></div>
+          <div class="sidebar-item">
+            <p>Clefable</p>
+          </div>
+          <div class="sidebar-item">
+            <p>Eterna Gym</p>
+          </div>
+          <div class="sidebar-item">
+            <p>Exeggutor</p>
+          </div>
+          <div class="sidebar-item">
+            <p>Slowpoke</p>
+          </div>
+          <div class="sidebar-item">
+            <p>Goldeen in Galar</p>
+          </div>
+          <div class="sidebar-item">
+            <p>League Staff</p>
+          </div>
         </div>
-        <div class="sidebar-item">
-          <p>Nav item</p>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title"><h3>Violet Gym</h3></div>
+          <div class="sidebar-item">
+            <p>Parasect</p>
+          </div>
+          <div class="sidebar-item">
+            <p>Graveler in Galar</p>
+          </div>
+          <div class="sidebar-item">
+            <p>Blastoise</p>
+          </div>
         </div>
-        <div class="sidebar-item">
-          <p>Nav item</p>
-        </div>
-        <div class="sidebar-item">
-          <p>Nav item</p>
-        </div>
-        <div class="sidebar-item">
-          <p>Nav item</p>
-        </div>
-        <div class="sidebar-item">
-          <p>Nav item</p>
-        </div>
-        <div class="sidebar-sectio-ntitle"><h3>Nav section</h3></div>
-
-        <div class="sidebar-item">
-          <p>Nav item</p>
-        </div>
-        <div class="sidebar-item">
-          <p>Nav item</p>
-        </div>
-        <div class="sidebar-item">
-          <p>Nav item</p>
-        </div>
-        <div class="sidebar-sectio-ntitle"><h3>Nav section</h3></div>
-        <div class="sidebar-item">
-          <p>Nav item</p>
-        </div>
-        <div class="sidebar-item">
-          <p>Nav item</p>
-        </div>
-        <div class="sidebar-item">
-          <p>Nav item</p>
-        </div>
-        <div class="sidebar-item">
-          <p>Nav item</p>
+        <div class="sidebar-section">
+          <div class="sidebar-section-title"><h3>Wing Attack</h3></div>
+          <div class="sidebar-item">
+            <p>Aqua Leader</p>
+          </div>
+          <div class="sidebar-item">
+            <p>Triathlete</p>
+          </div>
+          <div class="sidebar-item">
+            <p>String Shot.</p>
+          </div>
+          <div class="sidebar-item">
+            <p>Fury Attack</p>
+          </div>
         </div>
       </div>
 
       <div class="content">
-        <section>
+        <section class="content-first">
           <div class="content-box">
             <div class="content-box-title"><h2>Buttersandwich UI</h2></div>
             <div class="content-box-content">
@@ -77,7 +104,8 @@
               </p>
               <p>
                 A project that serves the only purpose of making a great UI with
-                modern tools and smooth flow.
+                modern tools and smooth flow. Most of the modern CSS used here
+                <strong>will not be</strong> supported by most browsers.
               </p>
               <p>
                 Lorem ipsum Pokémon Ranger used a Master Ball to catch Haunter.
@@ -88,10 +116,15 @@
                 the Dewford Gym in Hoenn. The leader at Circhester Stadium
                 specializes in Ice Pokémon.
               </p>
+              <p>
+                Lorem ipsum You can find the Mahogany Gym in Johto. Kabuto
+                evolved into Kabutops. Goldeen learned Horn Attack. Venusaur is
+                a Seed Pokémon.
+              </p>
             </div>
           </div>
         </section>
-        <section>
+        <section class="content-grid">
           <div class="content-box">
             <div class="content-box-title">
               <h2>Lorem ipsum Vileplume used Sleep Powder</h2>
@@ -113,8 +146,6 @@
               </p>
             </div>
           </div>
-        </section>
-        <section>
           <div class="content-box">
             <div class="content-box-title">
               <h2>Lorem ipsum Gambler gave a Magost Berry to Kabutops</h2>
@@ -143,6 +174,19 @@
                 Lorem ipsum Vulpix was found in Safari Zone Gate. Parasol Lady's
                 favorite Pokémon is Staryu. Gloom evolved into Vileplume.
                 Winstrate spotted Wigglytuff in Sinnoh.
+              </p>
+            </div>
+          </div>
+          <div class="content-box">
+            <div class="content-box-title">
+              <h2>Lorem ipsum You can earn the Forest Badge at Eterna Gym.</h2>
+            </div>
+            <div class="content-box-content">
+              <p>
+                Lorem ipsum Wartortle evolved into Blastoise. Chansey is a Egg
+                Pokémon. Electabuzz evolved into Electivire. Mewtwo was found in
+                Pokémon League. Sis and Bro traveled from National Park to
+                Violet City via Route 36.
               </p>
             </div>
           </div>

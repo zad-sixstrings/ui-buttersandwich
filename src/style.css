@@ -1,4 +1,4 @@
-/* General rules */
+/* === General rules === */
 :root {
   --border-fat: 3px solid var(--border-strong);
   --border-medium: 2px solid var(--border-strong);
@@ -28,10 +28,14 @@ h4 {
   color: var(--text-primary);
 }
 
-/* Main layout */
+/* === Main layout === */
 .main-wrapper {
+  box-sizing: border-box;
   display: grid;
-  padding: 40px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: 20px 50px;
   grid-template-columns: 250px 1fr;
   grid-template-rows: 60px 1fr 60px;
   grid-template-areas:
@@ -57,7 +61,7 @@ footer {
   grid-area: footer;
 }
 
-/* Header styling */
+/* === Header styling === */
 header {
   display: grid;
   align-content: center;
@@ -65,37 +69,241 @@ header {
   grid-template-columns: 1fr 500px;
   border: var(--border-fat);
   border-radius: var(--radius-big);
+  background-color: var(--bg-surface);
 }
 
 .header-menu {
   display: grid;
-  grid-template-columns: repeat(5, 100px);
+  grid-template-columns: repeat(5, 50px);
+  align-content: center;
+  justify-content: end;
+  justify-items: center;
 }
 
-/* Sidebar styling */
+.header-menu-item {
+  color: var(--text-primary);
+  background-color: transparent;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.header-menu-item:hover {
+  color: white;
+  transform: scale(1.05);
+}
+
+.icon {
+  --icon: none; /* Define icon variable */
+  display: block; /* Required for mask-image to work */
+  width: 24px;
+  height: 24px;
+  background-color: var(--text-primary);
+  mask: var(--icon) no-repeat center / contain; /* Shorthand for mask-repeat{}, mask-position{} and mask-size{} */
+  cursor: pointer;
+}
+
+/* Set icon variable */
+.icon-search {
+  --icon: url("./assets/white/Search_Magnifying_Glass.png");
+  anchor-name: --search;
+}
+.icon-user {
+  --icon: url("./assets/white/User_01.png");
+  anchor-name: --user;
+}
+.icon-notifications {
+  --icon: url("./assets/white/Bell.png");
+  anchor-name: --notifications;
+}
+.icon-theme {
+  --icon: url("./assets/white/Sun.png");
+}
+.icon-settings {
+  --icon: url("./assets/white/Settings.png");
+  anchor-name: --settings;
+}
+
+/* Header menu popovers */
+.searchbar-popover {
+  position: absolute;
+  position-anchor: --search;
+  inset: auto;
+  top: 28px;
+  right: anchor(left);
+  margin-right: 20px;
+  background-color: transparent;
+  border: none;
+  opacity: 0;
+  transition: display 0.3s, opacity 0.3s;
+  transition-behavior: allow-discrete;
+}
+.searchbar-popover:popover-open {
+  opacity: 1;
+  @starting-style {
+    opacity: 0;
+  }
+}
+
+.searchbar-popover input {
+  outline: none;
+  border: 2px solid var(--border-strong);
+  border-radius: var(--radius-med);
+  background-color: transparent;
+  color: var(--text-primary);
+  padding: 10px;
+}
+
+.user-popover {
+  position: absolute;
+  position-anchor: --user;
+  inset: auto;
+  top: anchor(bottom);
+  right: anchor(right);
+  margin-top: 10px;
+  background-color: var(--bg-surface);
+  border: var(--border-medium);
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: display 0.3s, opacity 0.3s;
+  transition-behavior: allow-discrete;
+}
+.user-popover:popover-open {
+  opacity: 1;
+  @starting-style {
+    opacity: 0;
+  }
+}
+
+.notifications-popover {
+  position: absolute;
+  position-anchor: --notifications;
+  inset: auto;
+  top: anchor(bottom);
+  right: anchor(right);
+  margin-top: 10px;
+  background-color: var(--bg-surface);
+  border: var(--border-medium);
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px rgb(0 0 0 / 50%);
+  opacity: 0;
+  transition: display 0.3s, opacity 0.3s;
+  transition-behavior: allow-discrete;
+}
+.notifications-popover:popover-open {
+  opacity: 1;
+  @starting-style {
+    opacity: 0;
+  }
+}
+
+.settings-popover {
+  position: absolute;
+  position-anchor: --settings;
+  inset: auto;
+  top: anchor(bottom);
+  right: anchor(right);
+  margin-top: 10px;
+  background-color: var(--bg-surface);
+  border: var(--border-medium);
+  border-radius: 10px;
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px rgb(0 0 0 / 50%);
+  opacity: 0;
+  transition: display 0.3s, opacity 0.3s;
+  transition-behavior: allow-discrete;
+}
+.settings-popover:popover-open {
+  opacity: 1;
+  @starting-style {
+    opacity: 0;
+  }
+}
+
+/* === Sidebar styling === */
 .sidebar {
+  height: 50%;
   border: var(--border-fat);
   border-radius: var(--radius-big);
+  background-color: var(--bg-surface);
 }
 
-/* Content styling */
+/* === Content styling === */
 .content {
+  height: 100%;
+}
+
+.content-first {
+  display: flex;
+  height: 200px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.content-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 250px;
+  justify-content: center;
+  align-content: start;
   gap: 20px;
 }
 
 .content-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  box-sizing: border-box;
+  padding: 20px;
   border: var(--border-fat);
   border-radius: var(--radius-big);
+  background-color: var(--bg-surface);
 }
 
-/* Footer styling */
+.content-box-content {
+  box-sizing: border-box;
+  height: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, black 70%, transparent);
+}
+
+.content-box-content p {
+  padding-top: 10px;
+}
+
+/* === Footer styling === */
 footer {
   display: flex;
   align-items: center;
   justify-content: center;
   border: var(--border-fat);
   border-radius: var(--radius-big);
+  background-color: var(--bg-surface);
+}
+
+/* === Responsive === */
+@media (width <= 2560px) {
+  .main-wrapper {
+    width: 60%;
+  }
+}
+
+@media (width <= 1920px) {
+  .main-wrapper {
+    width: 80%;
+  }
+}
+
+@media (width <= 1440px) {
+  .main-wrapper {
+    width: 100%;
+  }
 }

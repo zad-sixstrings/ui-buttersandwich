@@ -1,7 +1,12 @@
 :root {
-  --bg-main: #272322;
-  --bg-element: #463e39;
-  --border-strong: #c4b4a9;
-  --border-subtle: #928277;
-  --text-primary: #c4b4a9;
+  --bg-main: #11100f;
+  --bg-surface: #191716;
+
+  --text-primary: #e8e6e3;
+  --text-secondary: #b8b5b0;
+
+  --border-strong: #2a2623;
+  --border-soft: #1f1c1a;
+
+  --accent: #c8a96a; /* muted brass */
 }
