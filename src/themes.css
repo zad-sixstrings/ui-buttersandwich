@@ -1,0 +1,41 @@
+:root {
+  /* === DARK THEME (DEFAULT) === */
+  /* Backgrounds */
+  --bg-main: #11100f;
+  --bg-surface: #191716;
+  --bg-elevated: #23201d;
+
+  /* Text */
+  --text-primary: #e8e6e3;
+  --text-secondary: #b8b5b0;
+  --text-inverse: #0f0e0d;
+
+  /* Borders */
+  --border-strong: #2a2623;
+  --border-soft: #1f1c1a;
+
+  /* Accents */
+  --accent: #c8a96a;
+  --status-danger: #cf6656;
+}
+
+/* === LIGHT THEME (OVERRIDE) === */
+:root:has(#theme-switch:checked) {
+  /* BACKGROUNDS */
+  --bg-main: #fcfbf9;
+  --bg-surface: #f2f0eb;
+  --bg-elevated: #f3f2ee;
+
+  /* TEXT */
+  --text-primary: #191716;
+  --text-secondary: #6e6761;
+  --text-inverse: #0f0e0d;
+
+  /* BORDERS */
+  --border-strong: #d6d1cd;
+  --border-soft: #e8e4e0;
+
+  /* ACCENTS */
+  --accent: #bf9b55;
+  --status-danger: #b85c4e;
+}

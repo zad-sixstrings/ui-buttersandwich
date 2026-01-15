@@ -209,12 +209,14 @@ header {
   text-align: center;
 }
 
-.user-popover-email p, .user-popover-pwd p {
+.user-popover-email p,
+.user-popover-pwd p {
   margin-bottom: 6px;
   padding-left: 2px;
 }
 
-.user-popover-email input, .user-popover-pwd input{
+.user-popover-email input,
+.user-popover-pwd input {
   box-sizing: border-box;
   width: 100%;
   height: 35px;
@@ -238,7 +240,7 @@ header {
 }
 
 .user-popover button:hover {
-  background-color: oklch(from var(--accent) calc(l + 0.05) c h);;
+  background-color: oklch(from var(--accent) calc(l + 0.05) c h);
 }
 
 .user-popover:popover-open {
@@ -257,14 +259,59 @@ header {
   background-color: var(--bg-elevated);
   border: var(--border-medium);
   border-radius: 10px;
-  width: 150px;
-  height: 150px;
-  padding: 10px;
+  width: 300px;
+  max-height: 500px;
+  padding: 20px;
   box-shadow: 0px 0px 5px rgb(0 0 0 / 50%);
   opacity: 0;
   transition: display 0.3s, opacity 0.3s;
   transition-behavior: allow-discrete;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) var(--bg-surface);
 }
+
+.notifications-popover-title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.notifications-popover-items {
+  display: grid;
+  grid-auto-rows: 40px;
+}
+
+.notification {
+  box-sizing: border-box;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  grid-template-columns: minmax(0, 1fr) 20px;
+  border: var(--border-medium);
+  overflow: hidden;
+  padding: 0 10px;
+}
+
+.notification-read {
+  border: var(--border-medium);
+}
+
+.notification-read:hover {
+  border-color: var(--border-strong);
+  cursor: pointer;
+}
+
+.notification-text p {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notification-read img {
+  width: 18px;
+}
+
 .notifications-popover:popover-open {
   opacity: 1;
   @starting-style {
