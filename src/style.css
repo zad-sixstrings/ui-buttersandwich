@@ -1,8 +1,11 @@
 /* === General rules === */
 :root {
+  /* Borders */
   --border-fat: 3px solid var(--border-strong);
   --border-medium: 2px solid var(--border-strong);
   --border-light: 1px solid var(--border-strong);
+
+  /* Radii */
   --radius-big: 12px;
   --radius-med: 8px;
   --radius-sml: 4px;
@@ -14,7 +17,11 @@
 
 html,
 body {
-  background-color: var(--bg-main);
+  /* background-color: var(--bg-main); */
+  background: var(--bg-main);
+  background-image: radial-gradient(var(--border-soft) 2px, transparent 0);
+  background-size: 10px 10px;
+  background-position: -19px -19px;
   font-family: monospace;
   width: 100%;
   height: 100vh;
@@ -28,6 +35,20 @@ h4 {
   color: var(--text-primary);
 }
 
+a,
+a:link,
+a:hover,
+a:active,
+a:visited {
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.9s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 /* === Main layout === */
 .main-wrapper {
   box-sizing: border-box;
@@ -36,7 +57,7 @@ h4 {
   height: 100%;
   margin: auto;
   padding: 20px 50px;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 200px 1fr;
   grid-template-rows: 60px 1fr 60px;
   grid-template-areas:
     "header header"
@@ -127,50 +148,99 @@ header {
 .searchbar-popover {
   position: absolute;
   position-anchor: --search;
+  position-area: left center;
   inset: auto;
-  top: 28px;
-  right: anchor(left);
-  margin-right: 20px;
   background-color: transparent;
   border: none;
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+  width: 0;
+  padding-right: 15px;
   opacity: 0;
-  transition: display 0.3s, opacity 0.3s;
-  transition-behavior: allow-discrete;
+  transition: display 0.5s allow-discrete, overlay 0.5s allow-discrete,
+    width 0.5s ease, opacity 0.5s ease;
+  animation: develop 1s ease forwards;
 }
+
 .searchbar-popover:popover-open {
+  width: 200px;
   opacity: 1;
+
   @starting-style {
+    width: 0;
     opacity: 0;
   }
 }
 
 .searchbar-popover input {
+  flex-shrink: 0;
   outline: none;
   border: 2px solid var(--border-strong);
   border-radius: var(--radius-med);
   background-color: transparent;
   color: var(--text-primary);
-  padding: 10px;
+  padding: 6px;
 }
 
 .user-popover {
+  display: grid;
+  grid-template-rows: 50px 1fr 1fr 50px;
+  align-content: center;
+  align-items: center;
   position: absolute;
   position-anchor: --user;
   inset: auto;
-  top: anchor(bottom);
-  right: anchor(right);
+  position-area: bottom center;
   margin-top: 10px;
-  background-color: var(--bg-surface);
+  background-color: var(--bg-elevated);
   border: var(--border-medium);
   border-radius: 10px;
-  width: 150px;
-  height: 150px;
-  padding: 10px;
+  width: 250px;
+  height: 250px;
+  padding: 10px 30px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
   opacity: 0;
   transition: display 0.3s, opacity 0.3s;
   transition-behavior: allow-discrete;
 }
+
+.user-popover h2 {
+  text-align: center;
+}
+
+.user-popover-email p, .user-popover-pwd p {
+  margin-bottom: 6px;
+  padding-left: 2px;
+}
+
+.user-popover-email input, .user-popover-pwd input{
+  box-sizing: border-box;
+  width: 100%;
+  height: 35px;
+  background-color: var(--bg-main);
+  border: var(--border-medium);
+  outline: none;
+  color: var(--text-secondary);
+  caret-color: var(--text-secondary);
+  border-radius: var(--radius-med);
+  padding: 8px;
+}
+
+.user-popover button {
+  background-color: var(--accent);
+  color: var(--text-inverse);
+  border: none;
+  border-radius: var(--radius-med);
+  height: 80%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.user-popover button:hover {
+  background-color: oklch(from var(--accent) calc(l + 0.05) c h);;
+}
+
 .user-popover:popover-open {
   opacity: 1;
   @starting-style {
@@ -182,10 +252,9 @@ header {
   position: absolute;
   position-anchor: --notifications;
   inset: auto;
-  top: anchor(bottom);
-  right: anchor(right);
+  position-area: bottom center;
   margin-top: 10px;
-  background-color: var(--bg-surface);
+  background-color: var(--bg-elevated);
   border: var(--border-medium);
   border-radius: 10px;
   width: 150px;
@@ -207,10 +276,9 @@ header {
   position: absolute;
   position-anchor: --settings;
   inset: auto;
-  top: anchor(bottom);
-  right: anchor(right);
+  position-area: bottom center;
   margin-top: 10px;
-  background-color: var(--bg-surface);
+  background-color: var(--bg-elevated);
   border: var(--border-medium);
   border-radius: 10px;
   width: 150px;
@@ -230,10 +298,37 @@ header {
 
 /* === Sidebar styling === */
 .sidebar {
-  height: 50%;
+  height: 600px;
   border: var(--border-fat);
   border-radius: var(--radius-big);
   background-color: var(--bg-surface);
+  padding: 20px;
+}
+
+.sidebar-section {
+  margin-bottom: 20px;
+}
+
+.sidebar-section-title {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.sidebar-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding-left: 10px;
+  margin-bottom: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sidebar-item:hover {
+  background-color: var(--border-strong);
+  transform: translateX(2px);
+  border-left: 3px solid var(--text-secondary);
 }
 
 /* === Content styling === */
@@ -266,6 +361,11 @@ header {
   border: var(--border-fat);
   border-radius: var(--radius-big);
   background-color: var(--bg-surface);
+  transition: all 0.3s ease;
+}
+
+.content-box:hover {
+  border-color: oklch(from var(--border-strong) calc(l + 0.03) c h);
 }
 
 .content-box-content {
