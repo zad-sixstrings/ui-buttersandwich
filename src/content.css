@@ -11,15 +11,15 @@
 
 .content-grid {
   display: block;
-  column-width: 300px;
-  column-gap: 20px;
+  column-width: 400px;
+  column-gap: var(--gap-med);
 }
 
 .content-box {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: var(--gap-med);
   border: var(--border-fat);
   border-radius: var(--radius-big);
   background-color: var(--bg-surface);
@@ -27,8 +27,7 @@
   height: fit-content;
   max-height: 350px;
   overflow: hidden;
-  margin-bottom: 20px;
-
+  margin-bottom: var(--gap-med);
 }
 
 .content-box:hover {
@@ -43,4 +42,11 @@
 
 .content-box-content p {
   padding-top: 10px;
+}
+
+/* Responsive */
+@media (width <= 1024px) {
+  .content-first {
+    margin-bottom: var(--gap-med);
+  }
 }

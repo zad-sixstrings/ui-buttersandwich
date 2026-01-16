@@ -1,12 +1,14 @@
 header {
   position: sticky;
+  top: 0;
   display: grid;
   align-content: center;
   padding: 20px;
-  grid-template-columns: 1fr 500px;
+  grid-template-columns: 1fr auto;
   border: var(--border-fat);
   border-radius: var(--radius-big);
   background-color: var(--bg-surface);
+  z-index: 10;
 }
 
 .header-menu {

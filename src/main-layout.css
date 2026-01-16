@@ -11,7 +11,7 @@
     "header header"
     "sidebar main-content"
     "footer footer";
-  gap: 20px;
+  gap: var(--gap-big);
 }
 
 header {
@@ -46,5 +46,18 @@ footer {
 @media (width <= 1440px) {
   .main-wrapper {
     width: 100%;
+  }
+}
+
+@media (width <= 1024px) {
+  .main-wrapper {
+    grid-template-columns: 180px 1fr;
+  }
+}
+
+@media (width <= 570px) {
+  .main-wrapper {
+    grid-template-columns: 1fr;
+    background-color: red;
   }
 }

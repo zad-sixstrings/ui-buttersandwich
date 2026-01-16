@@ -20,7 +20,7 @@
   display: flex;
   align-items: center;
   height: 30px;
-  padding-left: 10px;
+  padding-left: 5px;
   margin-bottom: 2px;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -30,4 +30,11 @@
   background-color: var(--border-strong);
   transform: translateX(2px);
   border-left: 3px solid var(--text-secondary);
+}
+
+/* Responsive */
+@media (width <= 1024px) {
+  .sidebar {
+    padding: var(--gap-sml);
+  }
 }
