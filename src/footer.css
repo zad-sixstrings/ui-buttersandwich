@@ -1,0 +1,8 @@
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-fat);
+  border-radius: var(--radius-big);
+  background-color: var(--bg-surface);
+}

@@ -1,0 +1,56 @@
+:root {
+  /* Borders */
+  --border-fat: 3px solid var(--border-strong);
+  --border-medium: 2px solid var(--border-strong);
+  --border-light: 1px solid var(--border-strong);
+
+  /* Radii */
+  --radius-big: 12px;
+  --radius-med: 8px;
+  --radius-sml: 4px;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  background: var(--bg-main);
+  background-image: radial-gradient(var(--border-soft) 2px, transparent 0);
+  background-size: 10px 10px;
+  background-position: -19px -19px;
+  font-family: monospace;
+  width: 100%;
+  height: 100vh;
+  scrollbar-color: var(--border-strong) var(--bg-surface);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+ol,
+ul {
+  color: var(--text-primary);
+}
+
+ol,
+ul {
+  margin-top: 10px;
+}
+
+a,
+a:link,
+a:hover,
+a:active,
+a:visited {
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.9s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}

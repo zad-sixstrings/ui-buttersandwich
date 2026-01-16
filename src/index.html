@@ -6,21 +6,36 @@
     <title></title>
   </head>
   <body>
+
     <!-- Theme state controller -->
-    <input type="checkbox" id="theme-switch" style="display: none" />
+    <input
+      type="checkbox"
+      id="theme-switch"
+      style="display: none"
+    />
+    
     <div class="main-wrapper">
+      <!-- #region Header -->
       <header>
         <div class="header-title">
           <h1>Buttersandwich</h1>
         </div>
         <div class="header-menu">
-          <button class="header-menu-item" popovertarget="searchbar">
+          <button
+            class="header-menu-item"
+            popovertarget="searchbar"
+            aria-label="Open Search"
+          >
             <span class="icon icon-search"></span>
           </button>
           <div popover id="searchbar" class="searchbar-popover">
             <input class="searchbar" type="text" />
           </div>
-          <button popovertarget="user" class="header-menu-item">
+          <button
+            popovertarget="user"
+            class="header-menu-item"
+            aria-label="Open User"
+          >
             <span class="icon icon-user"></span>
           </button>
           <div popover id="user" class="user-popover">
@@ -35,7 +50,11 @@
             </div>
             <button>Submit</button>
           </div>
-          <button popovertarget="notifications" class="header-menu-item">
+          <button
+            popovertarget="notifications"
+            class="header-menu-item"
+            aria-label="Open Notifications"
+          >
             <span class="icon icon-notifications"></span>
           </button>
           <div popover id="notifications" class="notifications-popover">
@@ -55,9 +74,23 @@
               </div>
               <div class="notification">
                 <div class="notification-text">
-                  <p>
-                    Lorem ipsum Exeggutor learned Stomp.
-                  </p>
+                  <p>Lorem ipsum Exeggutor learned Stomp.</p>
+                </div>
+                <div class="notification-read">
+                  <img src="./assets/white/Check.png" />
+                </div>
+              </div>
+              <div class="notification">
+                <div class="notification-text">
+                  <p>Lorem ipsum Twins spotted Electrode in Sinnoh.</p>
+                </div>
+                <div class="notification-read">
+                  <img src="./assets/white/Check.png" />
+                </div>
+              </div>
+              <div class="notification">
+                <div class="notification-text">
+                  <p>Lorem ipsum Mr. Mime used Barrier.</p>
                 </div>
                 <div class="notification-read">
                   <img src="./assets/white/Check.png" />
@@ -66,7 +99,8 @@
               <div class="notification">
                 <div class="notification-text">
                   <p>
-                    Lorem ipsum Twins spotted Electrode in Sinnoh.
+                    Lorem ipsum The leader at Cianwood Gym specializes in
+                    Fighting Pokémon.
                   </p>
                 </div>
                 <div class="notification-read">
@@ -75,9 +109,7 @@
               </div>
               <div class="notification">
                 <div class="notification-text">
-                  <p>
-                    Lorem ipsum Mr. Mime used Barrier.
-                  </p>
+                  <p>Lorem ipsum Successor's favorite Pokémon is Cubone.</p>
                 </div>
                 <div class="notification-read">
                   <img src="./assets/white/Check.png" />
@@ -85,29 +117,7 @@
               </div>
               <div class="notification">
                 <div class="notification-text">
-                  <p>
-                    Lorem ipsum The leader at Cianwood Gym specializes in Fighting Pokémon.
-                  </p>
-                </div>
-                <div class="notification-read">
-                  <img src="./assets/white/Check.png" />
-                </div>
-              </div>
-              <div class="notification">
-                <div class="notification-text">
-                  <p>
-                    Lorem ipsum Successor's favorite Pokémon is Cubone.
-                  </p>
-                </div>
-                <div class="notification-read">
-                  <img src="./assets/white/Check.png" />
-                </div>
-              </div>
-              <div class="notification">
-                <div class="notification-text">
-                  <p>
-                    Lorem ipsum Horsea was found in Route 31.
-                  </p>
+                  <p>Lorem ipsum Horsea was found in Route 31.</p>
                 </div>
                 <div class="notification-read">
                   <img src="./assets/white/Check.png" />
@@ -125,9 +135,7 @@
               </div>
               <div class="notification">
                 <div class="notification-text">
-                  <p>
-                    Lorem ipsum Vaporeon used Quick Attack.
-                  </p>
+                  <p>Lorem ipsum Vaporeon used Quick Attack.</p>
                 </div>
                 <div class="notification-read">
                   <img src="./assets/white/Check.png" />
@@ -135,9 +143,7 @@
               </div>
               <div class="notification">
                 <div class="notification-text">
-                  <p>
-                    Lorem ipsum Golduck is a Duck Pokémon.
-                  </p>
+                  <p>Lorem ipsum Golduck is a Duck Pokémon.</p>
                 </div>
                 <div class="notification-read">
                   <img src="./assets/white/Check.png" />
@@ -145,9 +151,7 @@
               </div>
               <div class="notification">
                 <div class="notification-text">
-                  <p>
-                    Lorem ipsum Caterpie is a Worm Pokémon.
-                  </p>
+                  <p>Lorem ipsum Caterpie is a Worm Pokémon.</p>
                 </div>
                 <div class="notification-read">
                   <img src="./assets/white/Check.png" />
@@ -155,9 +159,7 @@
               </div>
               <div class="notification">
                 <div class="notification-text">
-                  <p>
-                    Lorem ipsum Jynx was found in Lost Hotel.
-                  </p>
+                  <p>Lorem ipsum Jynx was found in Lost Hotel.</p>
                 </div>
                 <div class="notification-read">
                   <img src="./assets/white/Check.png" />
@@ -165,9 +167,7 @@
               </div>
               <div class="notification">
                 <div class="notification-text">
-                  <p>
-                    Lorem ipsum Champion's favorite Pokémon is Kangaskhan.
-                  </p>
+                  <p>Lorem ipsum Champion's favorite Pokémon is Kangaskhan.</p>
                 </div>
                 <div class="notification-read">
                   <img src="./assets/white/Check.png" />
@@ -175,9 +175,7 @@
               </div>
               <div class="notification">
                 <div class="notification-text">
-                  <p>
-                    Lorem ipsum Nidoran♀ evolved into Nidorina.
-                  </p>
+                  <p>Lorem ipsum Nidoran♀ evolved into Nidorina.</p>
                 </div>
                 <div class="notification-read">
                   <img src="./assets/white/Check.png" />
@@ -205,9 +203,7 @@
               </div>
               <div class="notification">
                 <div class="notification-text">
-                  <p>
-                    Lorem ipsum Venusaur is a Seed Pokémon.
-                  </p>
+                  <p>Lorem ipsum Venusaur is a Seed Pokémon.</p>
                 </div>
                 <div class="notification-read">
                   <img src="./assets/white/Check.png" />
@@ -226,7 +222,8 @@
               <div class="notification">
                 <div class="notification-text">
                   <p>
-                    Lorem ipsum The leader at Canalave Gym specializes in Steel Pokémon.
+                    Lorem ipsum The leader at Canalave Gym specializes in Steel
+                    Pokémon.
                   </p>
                 </div>
                 <div class="notification-read">
@@ -246,7 +243,8 @@
               <div class="notification">
                 <div class="notification-text">
                   <p>
-                    Lorem ipsum The leader at Cianwood Gym specializes in Fighting Pokémon.
+                    Lorem ipsum The leader at Cianwood Gym specializes in
+                    Fighting Pokémon.
                   </p>
                 </div>
                 <div class="notification-read">
@@ -255,9 +253,7 @@
               </div>
               <div class="notification">
                 <div class="notification-text">
-                  <p>
-                    Lorem ipsum Glaceon User spotted Electabuzz in Alola.
-                  </p>
+                  <p>Lorem ipsum Glaceon User spotted Electabuzz in Alola.</p>
                 </div>
                 <div class="notification-read">
                   <img src="./assets/white/Check.png" />
@@ -265,22 +261,27 @@
               </div>
               <div class="notification">
                 <div class="notification-text">
-                  <p>
-                    Lorem ipsum Pidgeotto is a Bird Pokémon.
-                  </p>
+                  <p>Lorem ipsum Pidgeotto is a Bird Pokémon.</p>
                 </div>
                 <div class="notification-read">
                   <img src="./assets/white/Check.png" />
                 </div>
               </div>
-
             </div>
           </div>
           <!-- Switched from button to label so it can act as a clicker (only labels can) -->
-          <label for="theme-switch" class="header-menu-item">
+          <label
+            for="theme-switch"
+            class="header-menu-item"
+            aria-label="Switch Theme"
+          >
             <span class="icon icon-theme"></span>
           </label>
-          <button popovertarget="settings" class="header-menu-item">
+          <button
+            popovertarget="settings"
+            class="header-menu-item"
+            aria-label="Open Settings"
+          >
             <span class="icon icon-settings"></span>
           </button>
           <div popover id="settings" class="settings-popover">
@@ -288,7 +289,9 @@
           </div>
         </div>
       </header>
+      <!-- #endregion -->
 
+      <!-- #region Sidebar -->
       <div class="sidebar">
         <div class="sidebar-section">
           <div class="sidebar-section-title"><h3>Dewgong</h3></div>
@@ -339,7 +342,9 @@
           </div>
         </div>
       </div>
+      <!-- #endregion -->
 
+      <!-- #region Main content -->
       <div class="content">
         <section class="content-first">
           <div class="content-box">
@@ -350,10 +355,22 @@
                 supported or not), best practices and advanced grid layouts.
               </p>
               <p>
-                A project that serves the only purpose of making a great UI with
-                modern tools and smooth flow. Most of the modern CSS used here
-                <strong>will not be</strong> supported by most browsers.
+                This project serves as a showcase and playground for the most
+                modern HTML/CSS techniques available, without any Javascript.
+                Most of the modern CSS used here
+                <strong>will not be</strong> supported by most browsers. Even
+                Chrome can't handle some of them natively - and to do so, we
+                must:
               </p>
+              <ol>
+                <li>Go to <code>chrome://flags</code></li>
+                <li>
+                  Search for
+                  <strong>"Experimental Web Platform features".</strong>
+                </li>
+                <li>Set it to <strong>Enabled</strong> and relaunch.</li>
+              </ol>
+
               <p>
                 Lorem ipsum Pokémon Ranger used a Master Ball to catch Haunter.
                 Scyther was found in Route 127. Muk learned Sludge. Charizard
@@ -437,9 +454,126 @@
               </p>
             </div>
           </div>
+          <div class="content-box">
+            <div class="content-box-title">
+              <h2>Lorem ipsum Venonat learned Stun Spore.</h2>
+            </div>
+            <div class="content-box-content">
+              <p>
+                Lorem ipsum Monsieur's favorite Pokémon is Meowth. You can earn
+                the Storm Badge at Cianwood Gym. You can earn the Rising Badge
+                at Blackthorn Gym. Cloyster is a Bivalve Pokémon.
+              </p>
+            </div>
+          </div>
+          <div class="content-box">
+            <div class="content-box-title">
+              <h2>Lorem ipsum Medium used a Premier Ball to catch Arcanine.</h2>
+            </div>
+            <div class="content-box-content">
+              <p>
+                Lorem ipsum Vileplume is a Flower Pokémon. Cooltrainer's
+                favorite Pokémon is Mewtwo. Electrode learned Self-Destruct. Old
+                Couple used a Repeat Ball to catch Lickitung. Biker gave a
+                Custap Berry to Hitmonchan.
+              </p>
+              <p>
+                Lorem ipsum Janitor gave a Chilan Berry to Parasect. Kadabra is
+                a Psi Pokémon. Tentacruel was found in Weather Institute. Abra
+                evolved into Kadabra. Sky Trainer gave a Pecha Berry to Horsea.
+                Jr. Trainer♀ gave a Aguav Berry to Arcanine.
+              </p>
+            </div>
+          </div>
+          <div class="content-box">
+            <div class="content-box-title">
+              <h2>Lorem ipsum Harlequin visited Lost Tower in Sinnoh.</h2>
+            </div>
+            <div class="content-box-content">
+              <p>
+                Lorem ipsum Krabby used Crabhammer. You can earn the Rumble
+                Badge at Shalour Gym. Lapras used Ice Beam. Winstrate journeyed
+                along Route 104 between Route 105 and Rustboro City. You can
+                find the Circhester Stadium in Galar. Collector gave a Durin
+                Berry to Onix. You can find the Opelucid Gym in Unova.
+              </p>
+              <p>
+                Lorem ipsum Jigglypuff was found in Viridian Forest. Charizard
+                used Rage. Rhydon evolved into Rhyperior. Staryu learned Hydro
+                Pump. The leader at Violet Gym specializes in Flying Pokémon.
+                The leader at Eterna Gym specializes in Grass Pokémon.
+              </p>
+              <p>
+                Lorem ipsum Battle Chatelaine's favorite Pokémon is Dragonite.
+                The leader at Oreburgh Gym specializes in Rock Pokémon. Staryu
+                is a Star Shape Pokémon. Swimmer visited Route 5 in Kalos.
+                Pokémon Ranger explored Poni Plains in Alola. Tamer spotted
+                Kakuna in Sinnoh. Blastoise was found in Olivine Lighthouse. You
+                can find the Hammerlocke Stadium in Galar. Slowpoke was found in
+                Fight Area.
+              </p>
+            </div>
+          </div>
+          <div class="content-box">
+            <div class="content-box-title">
+              <h2>
+                Lorem ipsum Team Flare Boss's favorite Pokémon is Primeape.
+              </h2>
+            </div>
+            <div class="content-box-content">
+              <p>
+                Lorem ipsum The leader at Snowbelle Gym specializes in Ice
+                Pokémon. Raticate was found in Team Rocket HQ. Persian was found
+                in Route 2. Top Champion's favorite Pokémon is Eevee.
+              </p>
+              <p>
+                Lorem ipsum Aroma Lady traveled from Route 31 to Route 45 via
+                Dark Cave. The leader at Mauville Gym specializes in Electric
+                Pokémon. Aerodactyl was found in Couriway Town. You can find the
+                Cerulean Gym in Kanto. Hex Maniac used a Cherish Ball to catch
+                Ninetales. Machoke evolved into Machamp.
+              </p>
+            </div>
+          </div>
+          <div class="content-box">
+            <div class="content-box-title">
+              <h2>Lorem ipsum Chansey used Growl.</h2>
+            </div>
+            <div class="content-box-content">
+              <p>
+                Lorem ipsum Backpacker took Route 48 from Route 47 to Johto
+                Safari Zone. You can find the Blackthorn Gym in Johto. Cowgirl
+                spotted Moltres in Sinnoh. Bug Maniac spotted Venusaur in Kanto.
+                You can earn the Hive Badge at Azalea Gym. You can earn the
+                Knuckle Badge at Dewford Gym.
+              </p>
+            </div>
+          </div>
+          <div class="content-box">
+            <div class="content-box-title">
+              <h2>Lorem ipsum Nidoqueen used Double Kick.</h2>
+            </div>
+            <div class="content-box-content">
+              <p>
+                Lorem ipsum Venomoth was found in Route 2. Cyclist used a Luxury
+                Ball to catch Voltorb. The leader at Ecruteak Gym specializes in
+                Ghost Pokémon. Schoolgirl spotted Victreebel in Johto.
+              </p>
+              <p>
+                Lorem ipsum Venusaur learned SolarBeam. Pidgey learned Quick
+                Attack. You can find the Driftveil Gym in Unova. You can earn
+                the Legend Badge at Opelucid Gym. Team Skull Admin journeyed
+                along Route 134 between Route 133 and Slateport City. Team Flare
+                Admin used a Fast Ball to catch Moltres. The leader at
+                Stow-on-Side Stadium specializes in Fighting Pokémon.
+              </p>
+            </div>
+          </div>
         </section>
       </div>
+      <!-- #endregion -->
 
+      <!-- #region Footer -->
       <footer>
         <div class="footer-content">
           <p>
@@ -449,6 +583,7 @@
           </p>
         </div>
       </footer>
+      <!-- #endregion -->
     </div>
   </body>
 </html>

@@ -1,0 +1,33 @@
+.sidebar {
+  height: 600px;
+  border: var(--border-fat);
+  border-radius: var(--radius-big);
+  background-color: var(--bg-surface);
+  padding: 20px;
+}
+
+.sidebar-section {
+  margin-bottom: 20px;
+}
+
+.sidebar-section-title {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.sidebar-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding-left: 10px;
+  margin-bottom: 2px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sidebar-item:hover {
+  background-color: var(--border-strong);
+  transform: translateX(2px);
+  border-left: 3px solid var(--text-secondary);
+}
